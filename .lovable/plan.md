@@ -20,9 +20,9 @@ Ausdrücklich ausgeschlossen sind: redaktionelle Magazin-Website, News-Seite, Bl
    - Liquid Glass bleibt sparsam auf kleinen Player- und Bedienelementen; dekorative Glows und übermäßige Transparenz entfallen.
 
 3. **Persistenter Mini-Player**
-   - Beim Scrollen bleibt das aktive Audio als kompakter Mini-Player über der unteren Navigation erreichbar.
-   - Er zeigt Cover, Titel, Wiedergabestatus und Play/Pause; ein Antippen führt zurück zum vollständigen Player.
-   - Es spielt immer nur ein Audio gleichzeitig. Tastaturbedienung, zugängliche Namen und Statusansagen bleiben erhalten.
+- Während der Wiedergabe öffnet sich ein ruhiger, großflächiger Hörmodus mit dem jeweiligen Bild als atmosphärischem Hintergrund – inspiriert von Headspace, aber in der eigenen KLARTeXt.-Bildwelt.
+- Titel, Fortschritt und wenige große Bedienelemente liegen klar lesbar auf dieser Fläche; es gibt keinen Spotify-artigen Mini-Player.
+- Der Hörmodus lässt sich jederzeit schließen, ohne die Wiedergabe zu verlieren. Es spielt immer nur ein Audio gleichzeitig; Tastaturbedienung, zugängliche Namen und Statusansagen bleiben erhalten.
 
 4. **Begleittext und Audio zusammenführen**
    - Der wechselnde Text wird visuell und räumlich direkt mit der aktiven Audiokachel verbunden.
