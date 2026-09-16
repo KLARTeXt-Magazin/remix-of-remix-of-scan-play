@@ -28,9 +28,10 @@ import {
   RotateCw,
 } from "lucide-react";
 
-import coverImageNeu from "@/assets/pic_Z_M.jpg";
+import coverImageNeu from "@/assets/cover-moment-tactile.jpg";
 import { LiquidGlass } from "@/components/liquid-glass";
 import { InstallAction } from "@/components/install-action";
+import { ListeningMode } from "@/components/listening-mode";
 import { Button } from "@/components/ui/button";
 
 import {
@@ -165,6 +166,7 @@ function Index() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [listeningOpen, setListeningOpen] = useState(false);
 
   // -----------------------------------------------------
   // HEADER / SCROLL-ZUSTAND
@@ -282,6 +284,7 @@ function Index() {
       try {
         await audio.play();
         setIsPlaying(true);
+        setListeningOpen(true);
       } catch {
         setIsPlaying(false);
       }
@@ -545,15 +548,15 @@ function Index() {
           <div className="mx-auto w-full max-w-[430px]">
 
             <section
-              className="audio-player-card is-active relative overflow-hidden rounded-[2rem] border p-3 backdrop-blur-2xl"
+              className="audio-player-card is-active relative overflow-hidden rounded-[1.35rem] border p-3"
               aria-label="Audio-Player"
             >
 
               {/* Audio-Cover */}
-              <div className="relative aspect-square overflow-hidden rounded-[1.45rem]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[0.95rem]">
                 <img
                   src={coverImageNeu}
-                  alt="Ruhiger Stein auf dunklem Holz im warmen Morgenlicht"
+                  alt="Handgeschöpftes fliederfarbenes Papier mit Keramikring auf sandfarbenem Leinen"
                   width={1024}
                   height={1024}
                   className="h-full w-full object-cover"
@@ -703,12 +706,31 @@ function Index() {
             </section>
 
 
-            <p className="pt-8 text-center text-[9px] uppercase text-muted-foreground">
-              Scroll für mehr
+            <p className="pt-8 text-center text-[10px] font-medium uppercase text-muted-foreground">
+              Weiter zum Begleitimpuls
             </p>
 
           </div>
         </section>
+
+        <ListeningMode
+          open={listeningOpen}
+          onOpenChange={setListeningOpen}
+          title="Zeit für Dich"
+          eyebrow="Auszeit · Ausgabe 01"
+          cover={coverImageNeu}
+          isPlaying={isPlaying}
+          currentTime={currentTime}
+          duration={duration}
+          onTogglePlay={togglePlay}
+          onSkip={skip}
+          onSeek={(seconds) => {
+            const audio = audioRef.current;
+            if (!audio) return;
+            audio.currentTime = seconds;
+            setCurrentTime(seconds);
+          }}
+        />
 
 
         {/* =================================================
