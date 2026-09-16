@@ -690,7 +690,7 @@ export function AudioCard({
         isPlaying={isPlaying}
         currentTime={currentTime}
         duration={duration}
-        durationLabel={track.duration}
+        {...(track.duration ? { durationLabel: track.duration } : {})}
         onTogglePlay={togglePlay}
         onSkip={skip}
         onSeek={(seconds) => {

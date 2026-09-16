@@ -832,7 +832,7 @@ function Lichtblicke() {
           </div>
 
           <p className="px-5 pt-2 text-center text-xs tracking-[0.02em] text-muted-foreground sm:px-7">
-            Zum Wechseln seitlich wischen oder oben einen Punkt antippen
+            Zum Wechseln seitlich wischen oder einen Punkt antippen
           </p>
           </div>
 
