@@ -39,4 +39,4 @@ Die beiden Ausgaben wirken wie eine sorgfältig gestaltete, moderne Magazin-App 
 ## Technische Details
 - Änderungen beschränken sich auf die beiden Inhaltsseiten, die gemeinsame Audiokarte, Design-Tokens/Styles und neue Coverbilder.
 - Die bestehende Karussell- und Audiologik wird nicht neu geschrieben, sondern nur strukturell stabilisiert und visuell überarbeitet.
-- Kein Offline-Modus und keine zusätzlichen App-Funktionen.
+- Kein Offline-Modus und die Homescreen-Installation erhält eine kurze, verständliche Anleitung im Ausgaben-Menü (Slide-Badge).
