@@ -49,8 +49,8 @@ export type AudioTrack = {
   // Haupttitel der Audio
   title: string;
 
-  // Begleitendes Zitat unterhalb des Carousels
-  quote: string;
+  // Begleitendes Zitat unterhalb des Carousels (optional)
+  quote?: string;
 
   // Optionaler Erklärungstext
   note?: string;
