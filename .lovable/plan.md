@@ -1,42 +1,63 @@
-# Redesign: Editorial Japandi Audio-Bereiche
+# KLARTeXt. als mobile Digital Companion App
 
-## Ziel
-Die beiden Ausgaben wirken wie eine sorgfältig gestaltete, moderne Magazin-App statt wie eine generische Wellness- oder KI-Oberfläche. Die bestehende Bento-Struktur, Sand-, Salbei- und Walnusstöne sowie alle Funktionen bleiben erhalten.
+## Zielbild
+KLARTeXt. wird eine **mobile-first Digital Companion App** und eine **interaktive Audio-Begleitung** zur gedruckten Ausgabe. Die Gestaltung bleibt ruhig, taktil und hochwertig, fühlt sich aber klar wie eine persönliche, touchfreundliche App an.
+
+Ausdrücklich ausgeschlossen sind: redaktionelle Magazin-Website, News-Seite, Blog, Zeitungslayout, klassisches Editorial Design, Artikel-Feed und SaaS-Dashboard.
 
 ## Umsetzung
 
-1. **Audio-Bereich neu ordnen**
-   - Das Karussell erhält einen klaren, zentrierten Inhaltsrahmen innerhalb des Farbbands.
-   - „Zum Wechseln seitlich wischen …“ sitzt fest unter den Audiokacheln und kann durch die Ausrichtung des Hintergrundbildes nicht mehr seitlich verrutschen.
-   - Statuspunkte, Kacheln und Hinweis bilden auf Mobilgeräten eine zusammengehörige vertikale Einheit.
+1. **App-Struktur statt Magazinseite**
+   - Inhalte werden als kurze, scrollbare App-Bereiche mit modularen Kacheln organisiert.
+   - Ein kompakter App-Kopf bleibt beim Scrollen erreichbar und bietet schnellen Zugriff auf Ausgaben und Magazin.
+   - Eine mobile untere Navigation führt direkt zu „Heute“, „Audios“, „Gespeichert“ und „Mehr“; auf Desktop wird sie zurückhaltend angepasst.
+   - Bestehende Inhalte und Ausgaben bleiben erhalten, werden aber als persönlicher Content Companion statt als Artikelstrecke präsentiert.
 
-2. **Player „editorial klar“ statt starkem Liquid Glass**
-   - Große Player-Kacheln werden überwiegend opak und hell, mit einer präzisen Lichtkante, ruhigem weichem Schatten und klarer Typografie.
-   - Glas bleibt nur als feines Detail an Playerleiste, Badge oder Bedienelementen; dekorative Glows und übermäßige Transparenz entfallen.
-   - Die kräftigere Zeitleiste, lesbaren Zeitangaben und barrierefreien Bedienelemente bleiben erhalten.
+2. **Audio als primäre Erfahrung**
+   - Das Audio-Karussell erhält einen stabilen, zentrierten Bereich innerhalb seines Farbbands.
+   - „Zum Wechseln seitlich wischen …“ sitzt direkt unter den Kacheln und kann nicht mehr an den rechten Rand wandern.
+   - Die große Kachel wird **editorial klar im Sinne von hochwertiger Produktgestaltung**, nicht im Sinne einer Magazinseite: überwiegend opak, ruhig, präzise Lichtkante, weicher Schatten.
+   - Liquid Glass bleibt sparsam auf kleinen Player- und Bedienelementen; dekorative Glows und übermäßige Transparenz entfallen.
 
-3. **Begleittext sichtbar mit dem aktiven Audio verbinden**
-   - Der wechselnde Text wird direkt an das Audio-Farbband angebunden, statt wie eine unabhängige weiße Fläche zu wirken.
-   - Jede aktive Audio-Kachel erhält zusammen mit ihrem Begleittext einen dezenten, wiederkehrenden Farbakzent aus der bestehenden Palette.
-   - Download und Quellenangabe bleiben im Begleitbereich; die Audiokachel selbst bleibt reduziert.
+3. **Persistenter Mini-Player**
+   - Beim Scrollen bleibt das aktive Audio als kompakter Mini-Player über der unteren Navigation erreichbar.
+   - Er zeigt Cover, Titel, Wiedergabestatus und Play/Pause; ein Antippen führt zurück zum vollständigen Player.
+   - Es spielt immer nur ein Audio gleichzeitig. Tastaturbedienung, zugängliche Namen und Statusansagen bleiben erhalten.
 
-4. **Taktil-editoriale Bildwelt**
-   - Vier neue, zusammengehörige Covermotive: Papier, Keramik, Stoff, Schatten und ungewöhnliche Ausschnitte in natürlichem Licht.
-   - Keine Personen in Meditationspose, Sonnenuntergänge, leuchtenden Landschaften oder glatten KI-Wellness-Motive.
-   - Motive werden quadratisch, ruhig und kontrastreich genug für Text/Badges angelegt; vorhandene leere Platzhalter werden ersetzt.
-   - Bildgenerierung bleibt bewusst klein und effizient: nur die tatsächlich benötigte Cover-Serie.
+4. **Begleittext und Audio zusammenführen**
+   - Der wechselnde Text wird visuell und räumlich direkt mit der aktiven Audiokachel verbunden.
+   - Ein wiederkehrender Farbakzent kennzeichnet eindeutig, welcher Text zu welchem Audio gehört.
+   - Download und Quellenangabe bleiben im Begleitbereich; die Audiokachel selbst bleibt auf das Hören fokussiert.
 
-5. **Moodboard-nahe Gesamtwirkung**
-   - Mehr klare Flächen, asymmetrische redaktionelle Details und bewusste Leerräume.
-   - Sand, Khaki, Walnuss und gebrochenes Weiß führen; Mineralblau bleibt ausschließlich für Fokus und aktive Zustände.
-   - Ausgabe 01 und 02 erhalten dieselbe visuelle Logik, ohne Navigation, Inhalte, Installation oder Audioverhalten zu verändern.
+5. **Modulare Schnellzugriffe und Merken**
+   - Kleine, touchfreundliche Kacheln bieten schnellen Zugriff auf aktuelle Audios, Übungen, Downloads und die nächste Ausgabe.
+   - Audios können lokal auf dem Gerät als Favorit gespeichert und unter „Gespeichert“ schnell wiedergefunden werden.
+   - Keine Anmeldung und keine neue Datenbank; die Merkliste bleibt bewusst gerätebezogen.
+
+6. **Taktil-moderne Bildwelt**
+   - Vier neue, zusammengehörige Covermotive mit Papier, Keramik, Stoff, Schatten und ungewöhnlichen Ausschnitten in natürlichem Licht.
+   - Keine Meditationsposen, Sonnenuntergänge, leuchtenden Landschaften oder glatten KI-Wellness-Motive.
+   - Die Bilder werden quadratisch, ruhig und kontrastreich für kleine mobile Kacheln gestaltet; leere Platzhalter werden ersetzt.
+   - Die Bildserie bleibt klein und gezielt, um Credits sparsam einzusetzen.
+
+7. **Homescreen-App und verständliche Anleitung**
+   - Bestehendes Manifest, Standalone-Modus und Marken-Icons bleiben die technische Grundlage; kein Offline-Modus.
+   - Im jederzeit erreichbaren Ausgaben-/Mehr-Menü steht die Aktion „App auf Homescreen installieren“.
+   - Android nutzt den verfügbaren Installationsdialog; auf iPhone erscheint die kurze Anleitung „Teilen → Zum Home-Bildschirm“.
+   - Ist die App bereits vom Homescreen geöffnet, wird der Hinweis ausgeblendet.
+
+## Visuelle Richtung
+- Führend: Sand, Khaki, Salbei, Walnuss und gebrochenes Weiß.
+- Mineralblau ausschließlich für Fokus, aktive Auswahl und feine Orientierung.
+- Klare Flächen, kompakte Module, großzügige Ruhe und taktile Fotos statt dekorativer KI-Effekte.
+- Bento-Prinzip als funktionale App-Übersicht, nicht als Artikelraster oder Dashboard.
 
 ## Barrierefreiheit und Prüfung
-- Kontrast, sichtbare Tastaturfokusse, 44-Pixel-Ziele, ARIA-Texte und reduzierte Bewegung bleiben bestehen.
-- Prüfung auf 402 × 725 sowie Desktop: Karussellposition, Wischen, Tastaturwechsel, Player, Begleittextwechsel, Downloads und Ausgaben-Menü.
-- Beide Seiten behalten ihre eigenen vollständigen Metadaten; abschließend werden Vorschau und aktueller Build-Status geprüft.
+- Genau ein Hauptbereich, sichtbare Tastaturfokusse, verständliche deutsche Beschriftungen, mindestens 44-Pixel-Ziele, ausreichende Kontraste und reduzierte Bewegung.
+- Prüfung auf 402 × 725 sowie Desktop: untere Navigation, Scrollen, Karussell, Mini-Player, Audiowiedergabe, Begleittextwechsel, Favoriten, Downloads, Installationshinweis und Ausgaben-Menü.
+- Beide Inhaltsseiten behalten ihre eigenen vollständigen Metadaten.
 
 ## Technische Details
-- Änderungen beschränken sich auf die beiden Inhaltsseiten, die gemeinsame Audiokarte, Design-Tokens/Styles und neue Coverbilder.
-- Die bestehende Karussell- und Audiologik wird nicht neu geschrieben, sondern nur strukturell stabilisiert und visuell überarbeitet.
-- Kein Offline-Modus und die Homescreen-Installation erhält eine kurze, verständliche Anleitung im Ausgaben-Menü (Slide-Badge).
+- Änderungen betreffen die beiden Inhaltsseiten, gemeinsame Audio-/Navigationskomponenten, Design-Tokens und neue Coverbilder.
+- Der Audiozustand wird auf Seitenebene gebündelt, damit Vollansicht und Mini-Player synchron bleiben.
+- Favoriten werden ohne Konto lokal im Browser gespeichert; Audio- und Karussellverhalten bleiben ansonsten erhalten.
