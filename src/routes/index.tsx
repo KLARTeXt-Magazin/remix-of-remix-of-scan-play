@@ -281,10 +281,10 @@ function Index() {
     if (!audio) return;
 
     if (audio.paused) {
+      setListeningOpen(true);
       try {
         await audio.play();
         setIsPlaying(true);
-        setListeningOpen(true);
       } catch {
         setIsPlaying(false);
       }

@@ -328,12 +328,12 @@ export function AudioCard({
 
       // Diese Kachel als aktive Audio melden
       onPlay(track.id);
+      setListeningOpen(true);
 
       try {
         await audio.play();
 
         setIsPlaying(true);
-        setListeningOpen(true);
       } catch {
         setIsPlaying(false);
         onPlay(null);
