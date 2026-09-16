@@ -917,11 +917,13 @@ function Lichtblicke() {
                       }
                     </p>
 
-                    <p className="mt-4 font-display text-xl font-medium leading-8">
-                      {
-                        track.quote
-                      }
-                    </p>
+                    {track.quote ? (
+                      <p className="mt-4 font-display text-xl font-medium leading-8">
+                        {
+                          track.quote
+                        }
+                      </p>
+                    ) : null}
 
 
                     {track.note ? (

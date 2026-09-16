@@ -49,8 +49,8 @@ export type AudioTrack = {
   // Haupttitel der Audio
   title: string;
 
-  // Begleitendes Zitat unterhalb des Carousels
-  quote: string;
+  // Begleitendes Zitat unterhalb des Carousels (optional)
+  quote?: string;
 
   // Optionaler Erklärungstext
   note?: string;
@@ -574,7 +574,7 @@ export function AudioCard({
 
 
               {/* Zeitangaben */}
-              <div className="mt-1 flex justify-between text-xs font-medium tabular-nums text-muted-foreground">
+              <div className="mt-1.5 flex justify-between text-sm font-medium tabular-nums text-foreground/75">
 
                 <span>
                   {formatTime(

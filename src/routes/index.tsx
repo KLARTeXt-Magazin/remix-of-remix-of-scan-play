@@ -626,7 +626,7 @@ function Index() {
                     }
                   />
 
-                  <div className="mt-1 flex justify-between text-xs tabular-nums text-muted-foreground">
+                  <div className="mt-1.5 flex justify-between text-sm font-medium tabular-nums text-foreground/75">
                     <span>
                       {formatTime(currentTime)}
                     </span>

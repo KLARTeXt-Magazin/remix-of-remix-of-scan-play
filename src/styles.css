@@ -554,14 +554,16 @@
   max-width: 720px;
   box-sizing: border-box;
 
-  background: rgb(255 254 251 / 0.55);
+  background: rgb(255 254 251 / 0.62);
 
   border-color:
-    rgb(255 255 255 / 0.82);
+    rgb(255 255 255 / 0.92);
 
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.96),
-    inset 0 -1px 0 rgb(255 255 255 / 0.18);
+    inset 0 -1px 0 rgb(255 255 255 / 0.18),
+    0 26px 60px -22px rgb(70 58 45 / 0.32),
+    0 4px 16px rgb(70 58 45 / 0.08);
 
   backdrop-filter:
     blur(24px)
@@ -759,7 +761,10 @@
     scale(1);
 
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.96);
+    inset 0 1px 0 rgb(255 255 255 / 0.96),
+    inset 0 -1px 0 rgb(255 255 255 / 0.18),
+    0 28px 64px -22px rgb(70 58 45 / 0.34),
+    0 4px 16px rgb(70 58 45 / 0.08);
 }
 
 
@@ -999,7 +1004,7 @@
 
 /* Slider-Linie – Chrome/Safari */
 .player-range::-webkit-slider-runnable-track {
-  height: 4px;
+  height: 6px;
   border-radius: 999px;
 
   background:
@@ -1011,7 +1016,7 @@
 
       color-mix(
         in oklab,
-        var(--foreground) 18%,
+        var(--foreground) 22%,
         transparent
       )
         var(--player-progress)
@@ -1022,13 +1027,13 @@
 
 /* Slider-Linie – Firefox */
 .player-range::-moz-range-track {
-  height: 4px;
+  height: 6px;
   border-radius: 999px;
 
   background:
     color-mix(
       in oklab,
-      var(--foreground) 18%,
+      var(--foreground) 22%,
       transparent
     );
 }
@@ -1036,7 +1041,7 @@
 
 /* Abgespielter Bereich – Firefox */
 .player-range::-moz-range-progress {
-  height: 4px;
+  height: 6px;
   border-radius: 999px;
 
   background:
@@ -1046,8 +1051,8 @@
 
 /* Größerer Bedienpunkt – Chrome/Safari */
 .player-range::-webkit-slider-thumb {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 
   margin-top: -6px;
 
@@ -1059,7 +1064,7 @@
     var(--accent-mineral);
 
   box-shadow:
-    0 2px 8px rgb(70 58 45 / 0.22);
+    0 2px 10px rgb(70 58 45 / 0.28);
 }
 
 
