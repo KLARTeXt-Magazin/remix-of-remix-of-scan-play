@@ -150,66 +150,66 @@
   --radius: 0.625rem;
 
   /* Grundfarben */
-  --background: #F6F4E9;
-  --foreground: #3A0C0C;
+  --background: #F7F3EC;
+  --foreground: #171310;
 
   /* Karten */
-  --card: #FFFEFB;
-  --card-foreground: #35261F;
+  --card: #FFFEFA;
+  --card-foreground: #171310;
 
   /* Popover */
-  --popover: #FFFEFB;
-  --popover-foreground: #35261F;
+  --popover: #FFFEFA;
+  --popover-foreground: #171310;
 
   /* Hauptfarbe */
-  --primary: #3A0C0C;
-  --primary-foreground: #FFFEFB;
+  --primary: #626B50;
+  --primary-foreground: #FFFEFA;
 
   /* Sekundärfarbe */
-  --secondary: #C1B094;
-  --secondary-foreground: #35261F;
+  --secondary: #BC9E87;
+  --secondary-foreground: #171310;
 
   /* Dezente Farben */
-  --muted: #E8E0D5;
-  --muted-foreground: #625E43;
+  --muted: #E7E1D8;
+  --muted-foreground: #625B52;
 
-  --accent: #C1B094;
-  --accent-foreground: #35261F;
+  --accent: #DED9D1;
+  --accent-foreground: #171310;
 
   /* Fehler */
   --destructive: oklch(0.58 0.2 25);
-  --destructive-foreground: #FFFEFB;
+  --destructive-foreground: #FFFEFA;
 
   /* Rahmen / Formulare */
-  --border: rgb(118 113 84 / 0.24);
-  --input: rgb(118 113 84 / 0.30);
+  --border: rgb(112 102 89 / 0.25);
+  --input: rgb(112 102 89 / 0.32);
 
   /* Fokus */
-  --ring: #3A0C0C;
+  --ring: #626B50;
 
   /* Glass / Oberflächen */
-  --surface: rgb(255 254 251 / 0.58);
+  --surface: rgb(255 254 250 / 0.66);
   --panel-border: rgb(255 255 255 / 0.68);
-  --light: #FFFEFB;
+  --light: #FFFEFA;
 
   /* Sage / Khaki */
-  --sage: #8D8E1F;
-  --sage-foreground: #3A0C0C;
-  --sage-soft: #E6E5D8;
+  --sage: #626B50;
+  --sage-foreground: #FFFEFA;
+  --sage-soft: #E2E4DC;
 
-  /* Mineralblau – nur Akzent */
-  --mineral-band: #DBD1ED;
-  --accent-mineral: #3A0C0C;
-  --accent-mineral-soft: rgb(58 12 12 / 0.12);
+  /* Mineralischer Akzent – aus der Logo-Palette abgeleitet */
+  --mineral-band: #DED9D1;
+  --accent-mineral: #626B50;
+  --accent-mineral-soft: rgb(98 107 80 / 0.14);
 
   /* Weitere Abschnittsfarben */
-  --companion-band: #F6F4E9;
-  --continue-band: #C1B094;
-  --lilac: #DBD1ED;
-  --wine: #3A0C0C;
-  --olive: #8D8E1F;
-  --listening: #FFFFFA;
-  --listening-muted: rgb(255 255 250 / 0.78);
+  --companion-band: #FFFEFA;
+  --continue-band: #BC9E87;
+  --lilac: #DED9D1;
+  --wine: #171310;
+  --olive: #626B50;
+  --listening: #FFFEFA;
+  --listening-muted: rgb(255 254 250 / 0.78);
 }
 
 
@@ -704,7 +704,7 @@
   .audio-band--ausgabe-1,
   .audio-band--ausgabe-2
 ) {
-  background-color: #C1B094;
+  background-color: var(--secondary);
 }
 
 
@@ -751,8 +751,8 @@
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.96),
     inset 0 -1px 0 rgb(255 255 255 / 0.18),
-    0 26px 58px -24px rgb(58 12 12 / 0.32),
-    0 4px 14px rgb(58 12 12 / 0.07);
+    0 26px 58px -24px rgb(23 19 16 / 0.28),
+    0 4px 14px rgb(23 19 16 / 0.07);
 }
 
 
@@ -768,7 +768,7 @@
 .audio-cover-badge,
 .audio-lock {
   border-color: rgb(255 255 250 / 0.42);
-  background: rgb(58 12 12 / 0.46);
+  background: rgb(23 19 16 / 0.52);
   color: var(--listening);
 }
 
@@ -776,12 +776,12 @@
   position: relative;
 }
 
-.audio-band.audio-tone-2 { background: #E6E5D8; }
-.audio-band.audio-tone-3 { background: #C1B094; }
-.audio-band.audio-tone-4 { background: #DBD1ED; }
+.audio-band.audio-tone-2 { background: #E2E4DC; }
+.audio-band.audio-tone-3 { background: #D8C8BA; }
+.audio-band.audio-tone-4 { background: #D7D2C9; }
 
-.companion-inner { border-color: var(--lilac); }
-.companion-tone-2 .companion-inner { border-color: var(--wine); }
+.companion-inner { border-color: var(--secondary); }
+.companion-tone-2 .companion-inner { border-color: var(--olive); }
 .companion-tone-3 .companion-inner { border-color: var(--secondary); }
 .companion-tone-4 .companion-inner { border-color: var(--olive); }
 
@@ -804,7 +804,7 @@
 }
 
 .listening-mode__wash {
-  background: linear-gradient(180deg, rgb(58 12 12 / 0.08) 10%, rgb(58 12 12 / 0.34) 48%, rgb(38 8 8 / 0.94) 100%);
+  background: linear-gradient(180deg, rgb(23 19 16 / 0.06) 10%, rgb(23 19 16 / 0.34) 48%, rgb(23 19 16 / 0.94) 100%);
 }
 
 .listening-control {
@@ -817,10 +817,10 @@
 .listening-play {
   background: var(--listening);
   color: var(--wine);
-  box-shadow: 0 16px 34px rgb(38 8 8 / 0.30);
+  box-shadow: 0 16px 34px rgb(23 19 16 / 0.30);
 }
 
-.listening-play:hover { background: #F6F4E9; }
+.listening-play:hover { background: var(--background); }
 
 .listening-range::-webkit-slider-runnable-track {
   background: linear-gradient(to right, var(--listening) 0 var(--player-progress), rgb(255 255 250 / 0.28) var(--player-progress) 100%);
