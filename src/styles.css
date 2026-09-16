@@ -150,64 +150,64 @@
   --radius: 0.625rem;
 
   /* Grundfarben */
-  --background: #F7F3EC;
-  --foreground: #171310;
+  --background: #F6F4E9;
+  --foreground: #260808;
 
   /* Karten */
   --card: #FFFEFA;
-  --card-foreground: #171310;
+  --card-foreground: #260808;
 
   /* Popover */
   --popover: #FFFEFA;
-  --popover-foreground: #171310;
+  --popover-foreground: #260808;
 
-  /* Hauptfarbe */
-  --primary: #626B50;
-  --primary-foreground: #FFFEFA;
+  /* Hauptfarbe – tiefes Burgunder */
+  --primary: #3A0C0C;
+  --primary-foreground: #F6F4E9;
 
-  /* Sekundärfarbe */
-  --secondary: #BC9E87;
-  --secondary-foreground: #171310;
+  /* Sekundärfarbe – warmes Taupe-Braun */
+  --secondary: #9A8065;
+  --secondary-foreground: #260808;
 
   /* Dezente Farben */
-  --muted: #E7E1D8;
-  --muted-foreground: #625B52;
+  --muted: #E6E5D8;
+  --muted-foreground: #6B5A4E;
 
-  --accent: #DED9D1;
-  --accent-foreground: #171310;
+  --accent: #E6E5D8;
+  --accent-foreground: #260808;
 
   /* Fehler */
   --destructive: oklch(0.58 0.2 25);
   --destructive-foreground: #FFFEFA;
 
   /* Rahmen / Formulare */
-  --border: rgb(112 102 89 / 0.25);
-  --input: rgb(112 102 89 / 0.32);
+  --border: rgb(112 96 80 / 0.25);
+  --input: rgb(112 96 80 / 0.32);
 
   /* Fokus */
-  --ring: #626B50;
+  --ring: #3A0C0C;
 
   /* Glass / Oberflächen */
   --surface: rgb(255 254 250 / 0.66);
   --panel-border: rgb(255 255 255 / 0.68);
   --light: #FFFEFA;
 
-  /* Sage / Khaki */
-  --sage: #626B50;
-  --sage-foreground: #FFFEFA;
-  --sage-soft: #E2E4DC;
+  /* Übungsbereich – Burgunder auf warmem Beige */
+  --sage: #3A0C0C;
+  --sage-foreground: #260808;
+  --sage-soft: #E6E5D8;
 
-  /* Mineralischer Akzent – aus der Logo-Palette abgeleitet */
-  --mineral-band: #DED9D1;
-  --accent-mineral: #626B50;
-  --accent-mineral-soft: rgb(98 107 80 / 0.14);
+  /* Akzent – Burgunder, aus der Logo-Palette abgeleitet */
+  --mineral-band: #E6E5D8;
+  --accent-mineral: #3A0C0C;
+  --accent-mineral-soft: rgb(58 12 12 / 0.12);
 
   /* Weitere Abschnittsfarben */
   --companion-band: #FFFEFA;
-  --continue-band: #BC9E87;
-  --lilac: #DED9D1;
-  --wine: #171310;
-  --olive: #626B50;
+  --continue-band: #9A8065;
+  --lilac: #E6E5D8;
+  --wine: #260808;
+  --olive: #3B221D;
   --listening: #FFFEFA;
   --listening-muted: rgb(255 254 250 / 0.78);
 }
@@ -776,14 +776,14 @@
   position: relative;
 }
 
-.audio-band.audio-tone-2 { background: #E2E4DC; }
-.audio-band.audio-tone-3 { background: #D8C8BA; }
-.audio-band.audio-tone-4 { background: #D7D2C9; }
+.audio-band.audio-tone-2 { background: #DFD5C4; }
+.audio-band.audio-tone-3 { background: #D6C5B2; }
+.audio-band.audio-tone-4 { background: #CBB9A8; }
 
 .companion-inner { border-color: var(--secondary); }
 .companion-tone-2 .companion-inner { border-color: var(--olive); }
 .companion-tone-3 .companion-inner { border-color: var(--secondary); }
-.companion-tone-4 .companion-inner { border-color: var(--olive); }
+.companion-tone-4 .companion-inner { border-color: var(--primary); }
 
 .listening-mode {
   background: var(--wine);
