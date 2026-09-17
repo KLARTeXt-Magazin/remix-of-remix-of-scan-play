@@ -728,8 +728,8 @@
    ------------------------------------------------------- */
 
 .companion-band {
-  background: var(--background);
-  border-top: 1px solid color-mix(in oklab, var(--wine) 12%, transparent);
+  background: var(--lilac);
+  border-top: 1px solid color-mix(in oklab, var(--wine) 16%, transparent);
 }
 
 
@@ -776,9 +776,12 @@
   position: relative;
 }
 
-.audio-band.audio-tone-2 { background: #DFD5C4; }
-.audio-band.audio-tone-3 { background: #D6C5B2; }
-.audio-band.audio-tone-4 { background: #CBB9A8; }
+.audio-band.audio-tone-2,
+.companion-band.companion-tone-2 { background: #DFD5C4; }
+.audio-band.audio-tone-3,
+.companion-band.companion-tone-3 { background: #D6C5B2; }
+.audio-band.audio-tone-4,
+.companion-band.companion-tone-4 { background: #CBB9A8; }
 
 .companion-inner { border-color: var(--secondary); }
 .companion-tone-2 .companion-inner { border-color: var(--olive); }
