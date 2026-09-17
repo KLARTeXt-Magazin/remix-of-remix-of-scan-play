@@ -18,10 +18,7 @@ import { useEffect, useRef, useState } from "react";
 
 import {
   Lock,
-  Pause,
   Play,
-  RotateCcw,
-  RotateCw,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -348,6 +345,19 @@ export function AudioCard({
     }
   };
 
+  const openListeningMode = async () => {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    if (audio.paused) {
+      await togglePlay();
+      return;
+    }
+
+    setListeningOpen(true);
+  };
+
 
   // =====================================================
   // AUDIO SPRINGEN
@@ -473,9 +483,7 @@ export function AudioCard({
           AUDIO-INHALT
           Zweck:
           • Titel
-          • Player
-          • Fortschritt
-          • Steuerung
+          • Einstieg in den großflächigen Hörmodus
          ================================================= */}
 
       <div className="relative z-10 px-3 pb-4 pt-5">
@@ -486,183 +494,27 @@ export function AudioCard({
         </h3>
 
 
-        {/* =================================================
-            FREIGESCHALTETER PLAYER
-           ================================================= */}
-
         {unlocked ? (
-          <>
-
-            {/* -------------------------------------------------
-                FORTSCHRITTSBALKEN
-                • aktuelle Position
-                • Gesamtdauer
-               ------------------------------------------------- */}
-
-            <div className="mt-6">
-
-              <label
-                className="sr-only"
-                htmlFor={`progress-${track.id}`}
-              >
-                Wiedergabeposition in
-                „{track.title}“
-              </label>
-
-
-              <input
-                id={`progress-${track.id}`}
-                type="range"
-                min={0}
-                max={duration || 1}
-                step={0.1}
-                value={currentTime}
-                aria-valuetext={`${formatTime(
-                  currentTime,
-                )} von ${
-                  duration
-                    ? formatTime(
-                        duration,
-                      )
-                    : track.duration ??
-                      "unbekannt"
-                } Minuten`}
-                onChange={(event) => {
-                  const audio =
-                    audioRef.current;
-
-                  if (!audio) return;
-
-                  const next =
-                    Number(
-                      event.target
-                        .value,
-                    );
-
-                  audio.currentTime =
-                    next;
-
-                  setCurrentTime(
-                    next,
-                  );
-                }}
-                className="player-range w-full"
-                style={
-                  {
-                    "--player-progress": `${
-                      duration
-                        ? (currentTime /
-                            duration) *
-                          100
-                        : 0
-                    }%`,
-                  } as React.CSSProperties
-                }
-              />
-
-
-              {/* Zeitangaben */}
-              <div className="mt-1.5 flex justify-between text-sm font-medium tabular-nums text-foreground/75">
-
-                <span>
-                  {formatTime(
-                    currentTime,
-                  )}
-                </span>
-
-                <span>
-                  {duration
-                    ? formatTime(
-                        duration,
-                      )
-                    : track.duration ??
-                      "—"}
-                </span>
-
-              </div>
-
-            </div>
-
-
-            {/* =================================================
-                PLAYER-STEUERUNG
-                • -15 Sekunden
-                • Play / Pause
-                • +15 Sekunden
-               ================================================= */}
-
-            <div className="mt-4 flex items-center justify-center gap-8">
-
-              {/* 15 Sekunden zurück */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="size-11 rounded-full text-muted-foreground transition-all hover:bg-secondary"
-                onClick={() =>
-                  skip(-15)
-                }
-                aria-label={`15 Sekunden zurückspringen in „${track.title}“`}
-              >
-                <RotateCcw
-                  className="size-5"
-                  strokeWidth={1.4}
-                />
-              </Button>
-
-
-              {/* Play / Pause */}
-              <Button
-                className="size-[4.6rem] rounded-full bg-primary text-primary-foreground shadow-play transition-transform hover:bg-primary/90 active:scale-95"
-                onClick={
-                  togglePlay
-                }
-                aria-pressed={
-                  isPlaying
-                }
-                aria-label={
-                  isPlaying
-                    ? `„${track.title}“ pausieren`
-                    : `„${track.title}“ abspielen`
-                }
-              >
-                {isPlaying ? (
-                  <Pause className="size-7 fill-current" />
-                ) : (
-                  <Play className="ml-1 size-7 fill-current" />
-                )}
-              </Button>
-
-
-              {/* 15 Sekunden vor */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="size-11 rounded-full text-muted-foreground transition-all hover:bg-secondary"
-                onClick={() =>
-                  skip(15)
-                }
-                aria-label={`15 Sekunden vorspringen in „${track.title}“`}
-              >
-                <RotateCw
-                  className="size-5"
-                  strokeWidth={1.4}
-                />
-              </Button>
-
-            </div>
-
-
-            {/* Wiedergabestatus */}
-            <p
-              className="mt-4 text-center text-xs text-muted-foreground"
-              aria-live="polite"
+          <div className="mt-6">
+            <Button
+              className="min-h-12 w-full justify-center gap-2 rounded-full bg-primary px-5 text-primary-foreground shadow-play hover:bg-primary/90"
+              onClick={openListeningMode}
+              aria-label={
+                isPlaying
+                  ? `Hörmodus für „${track.title}“ öffnen`
+                  : `„${track.title}“ anhören`
+              }
             >
-              {isPlaying
-                ? "Läuft gerade"
-                : "Pausiert"}
-            </p>
+              <Play className="size-4 fill-current" aria-hidden="true" />
+              {isPlaying ? "Hörmodus öffnen" : "Anhören"}
+            </Button>
 
-          </>
+            {isPlaying ? (
+              <p className="mt-3 text-center text-xs font-medium text-muted-foreground" aria-live="polite">
+                Läuft gerade
+              </p>
+            ) : null}
+          </div>
 
         ) : (
 
