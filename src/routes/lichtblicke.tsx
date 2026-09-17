@@ -342,9 +342,9 @@ function Lichtblicke() {
 
 
   // =====================================================
-  // CAROUSEL-BEOBACHTER
+  // CAROUSEL-AUSWAHL
   // Zweck:
-  // • erkennt automatisch, welche Audiokachel sichtbar ist
+  // • erkennt nach dem Wischen, welche Audiokachel sichtbar ist
   // • aktualisiert Punkte + Begleittext
   //
   // Nicht entfernen:
@@ -353,52 +353,44 @@ function Lichtblicke() {
 
   useEffect(() => {
     const scroller = scrollerRef.current;
-   
+
     if (!scroller) return;
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
-          const visible = entries
-            .filter(
-              (entry) =>
-                entry.isIntersecting,
-            )
-            .sort(
-              (a, b) =>
-                b.intersectionRatio -
-                a.intersectionRatio,
-            );
-          const top = visible[0];
-          if (!top) return;
-          const index =
-            slideRefs.current.findIndex(
-              (node) =>
-                node === top.target,
-            );
-          if (index >= 0) {
-            setActiveIndex(index);
-          }
-        },
-        {
-          root: scroller,
-          threshold: [
-            0.45,
-            0.6,
-            0.75,
-            0.9,
-          ],
-        },
-      );
 
-    slideRefs.current.forEach(
-      (slide) => {
-        if (slide)
-          observer.observe(slide);
-      },
-    );
+    let settleTimer: ReturnType<typeof setTimeout> | undefined;
 
-    return () =>
-      observer.disconnect();
+    const selectNearestSlide = () => {
+      const scrollerCenter =
+        scroller.getBoundingClientRect().left +
+        scroller.clientWidth / 2;
+
+      let nearestIndex = 0;
+      let nearestDistance = Number.POSITIVE_INFINITY;
+
+      slideRefs.current.forEach((slide, index) => {
+        if (!slide) return;
+        const rect = slide.getBoundingClientRect();
+        const distance = Math.abs(rect.left + rect.width / 2 - scrollerCenter);
+
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestIndex = index;
+        }
+      });
+
+      setActiveIndex(nearestIndex);
+    };
+
+    const handleScroll = () => {
+      if (settleTimer) clearTimeout(settleTimer);
+      settleTimer = setTimeout(selectNearestSlide, 140);
+    };
+
+    scroller.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      scroller.removeEventListener("scroll", handleScroll);
+      if (settleTimer) clearTimeout(settleTimer);
+    };
   }, []);
 
 
@@ -459,6 +451,8 @@ function Lichtblicke() {
   // =====================================================
 
   const goTo = (index: number) => {
+    setActiveIndex(index);
+
     const card =
       slideRefs.current[index];
 
@@ -854,7 +848,8 @@ function Lichtblicke() {
 //         ================================================= */}
 
         <section
-          className={`companion-band companion-tone-${activeIndex + 1} px-6 py-16 sm:px-7`}
+          className={`companion-band companion-tone-${activeIndex + 1} px-6 pb-14 pt-9 sm:px-7`}
+          aria-label={`Begleitimpuls zu ${tracks[activeIndex]?.title ?? "diesem Audio"}`}
           aria-live="polite"
         >
           <div className="companion-inner mx-auto w-full max-w-[430px] border-l-4 pl-5">
@@ -880,9 +875,7 @@ function Lichtblicke() {
                   >
 
                     <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
-                      {
-                        track.eyebrow
-                      }
+                      Begleitimpuls · {track.eyebrow}
                     </p>
 
                     {track.quote ? (
